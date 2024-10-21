@@ -1,5 +1,5 @@
 all:
-    gcc -o hello main.c
+	gcc -o hello main.c
 
 clean:
-    rm -f hello
+	rm -f hello
