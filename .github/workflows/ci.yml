@@ -1,0 +1,23 @@
+name: C Program Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v2
+
+    - name: Set up C environment
+      run: sudo apt-get install build-essential
+
+    - name: Build the C program
+      run: make
+
+    - name: Run the program
+      run: ./hello
