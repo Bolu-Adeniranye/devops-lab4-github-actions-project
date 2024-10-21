@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository content
         uses: actions/checkout@v4
@@ -19,7 +18,8 @@ jobs:
       - name: Build the C program
         run: make
 
-      - name: Upload build artifact4
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3 # <-- Updated to version 3
         with:
           name: hello
           path: ./hello
